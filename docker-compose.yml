@@ -5,4 +5,3 @@ services:
     ports:
       - "2224:80"
     restart: unless-stopped
-    container_name: pinon-tree-business-web
