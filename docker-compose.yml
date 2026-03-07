@@ -8,8 +8,8 @@ services:
     restart: unless-stopped
     ports:
       - "2224:80"
-    env_file:
-      - stack.env
+    # env_file:
+    #   - stack.env
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:80/"]
       interval: 30s
