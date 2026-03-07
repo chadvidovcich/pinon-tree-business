@@ -1,5 +1,6 @@
 services:
   pinon-tree-business:
+    container_name: project-pinon-tree-business-app
     build:
       context: .
       dockerfile: Dockerfile
