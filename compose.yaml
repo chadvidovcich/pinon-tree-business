@@ -1,18 +1,19 @@
 services:
   pinon-tree-business:
-    container_name: project-pinon-tree-business-app
+    container_name: portfolio-pinon-tree-business-app
     build:
       context: .
       dockerfile: Dockerfile
     image: pinon-tree-business:latest
     pull_policy: never
     restart: unless-stopped
-    ports:
-      - "2224:80"
-    # env_file:
-    #   - stack.env
+    networks: [tunnel]
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:80/"]
       interval: 30s
       timeout: 5s
       retries: 3
+
+networks:
+  tunnel:
+    external: true
